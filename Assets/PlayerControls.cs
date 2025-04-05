@@ -58,12 +58,6 @@ public class PlayerControls : MonoBehaviour
 
         if (shootAction.IsPressed() && CanShoot == true)
         {
-            /*Rigidbody2D clone;
-            clone = Instantiate(projectile, transform.position, transform.rotation);
-
-            clone.linearVelocity = transform.TransformDirection(Vector2.up * 10);
-            */
-
             FireBullet(transform.position + new Vector3((float)0.2, 0, 0), Vector2.up * 10);
             FireBullet(transform.position - new Vector3((float)0.2, 0, 0), Vector2.up * 10);
             CanShoot = false;

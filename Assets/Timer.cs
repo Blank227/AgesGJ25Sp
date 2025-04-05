@@ -1,16 +1,19 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [SerializeField] TextMeshPro testText;
     void Start()
     {
-        
+        testText = GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
