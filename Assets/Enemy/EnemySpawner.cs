@@ -77,7 +77,11 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject enemyobject = Instantiate(spawnConditions.EnemyPrefab, gameObject.transform);
             var enemyShoot = enemyobject.GetComponent<EnemyShoot>();
+            if (enemyShoot != null)
+            {
+
             enemyShoot.SetGroupShootTimers(spawnConditions.groupShootTimer);
+            }
             enemyShoot.SetPlayerObject(playerObject);
             var enemyMove = enemyobject.GetComponent<EnemyMove>();
             enemyMove.setPath(path, startOffsset);
