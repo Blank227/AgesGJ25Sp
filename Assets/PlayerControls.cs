@@ -13,13 +13,14 @@ public class PlayerControls : MonoBehaviour
     public float MovementSpeed = 5.0f;
     public string ShootActionName;
     public string StopActionName;
-    public Rigidbody2D projectile;
+    public GameObject projectile;
 
     private float ShotCooldown = 0f;
     public bool CanShoot = true;
     public Camera Camera;
     public float widthThreshold;
     public float heightThreshold;
+    BulletPool bulletPool;
 
 
     void Start()
@@ -27,6 +28,8 @@ public class PlayerControls : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         shootAction = InputSystem.actions.FindAction(ShootActionName);
         stopAction = InputSystem.actions.FindAction(StopActionName);
+        var bulletPoolObject = GameObject.FindWithTag("PlayerBulletPool");
+        bulletPool = bulletPoolObject.GetComponent<BulletPool>();
     }
 
     // Update is called once per frame
@@ -67,9 +70,8 @@ public class PlayerControls : MonoBehaviour
 
     private void FireBullet(Vector3 position, Vector3 direction)
     {
-        Rigidbody2D clone;
-        clone = Instantiate(projectile, position, transform.rotation);
-
-        clone.linearVelocity = transform.TransformDirection(direction);
+        var bulletObject = bulletPool.GetNextBullet();
+        var bullet = bulletObject.GetComponent<Bullet>();
+        bullet.ShootBullet(transform.position, transform.up,10f);
     }
 }

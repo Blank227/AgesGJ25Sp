@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour, IHurt
 
     private void Start()
     {
-        GameObject enemyHandlerObject = GameObject.FindGameObjectWithTag("EnemyHandler");
+        GameObject enemyHandlerObject = GameObject.FindGameObjectWithTag("EnemyHandlers");
         _enemyGroupHandler = enemyHandlerObject.GetComponent<EnemyGroupHandler>();
     }
 
@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour, IHurt
         if (health < 0)
         {
             _enemyGroupHandler.RemoveEnemyFromGroup(_enemyInformationScript.EnemyGroupId, _enemyInformationScript.EnemyId);
-         Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
