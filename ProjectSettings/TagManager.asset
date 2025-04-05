@@ -7,6 +7,8 @@ TagManager:
   - EnemyBulletPool
   - EnemyHandlers
   - PlayerBulletPool
+  - LeftPlayer
+  - RightPlayer
   layers:
   - Default
   - TransparentFX

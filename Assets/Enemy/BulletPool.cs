@@ -21,7 +21,7 @@ public class BulletPool : MonoBehaviour
     {
         for (int i = 0; i < bulletamount; i++) 
         {
-            GameObject bulletObject = GameObject.Instantiate(bulletPrefab);
+            GameObject bulletObject = GameObject.Instantiate(bulletPrefab, gameObject.transform);
             Bullets.Add(bulletObject);
             bulletObject.SetActive(false);
         }

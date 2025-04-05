@@ -7,13 +7,14 @@ public class EnemyShoot : MonoBehaviour
 
 
     BulletPool EnemyBulletPool;
-
+    GameObject _player;
     [SerializeField]
     IList<GroupShootTimer> _groupShootTimers = new List<GroupShootTimer>();
 
 
     float groupShootTimer = 0;
     int currentGorupShootIndex = 0;
+
 
     public void SetGroupShootTimers(List<GroupShootTimer> shootTimers)
     {
@@ -27,7 +28,10 @@ public class EnemyShoot : MonoBehaviour
 
 
 
-
+    public void SetPlayerObject(GameObject player)
+    {
+        _player = player;
+    }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -79,7 +83,18 @@ public class EnemyShoot : MonoBehaviour
         var bulletObject = EnemyBulletPool.GetNextBullet();
 
         var bullet = bulletObject.GetComponent<Bullet>();
-        bullet.ShootBullet(transform.position, enemyShootDataObject.ShootDirection,enemyShootDataObject.ShootSpeed);
+
+        if (enemyShootDataObject.ShootType == ShootTypeEnum.AimAtPlayer)
+        {
+            Vector2 direction = (_player.transform.position - gameObject.transform.position).normalized;
+            bullet.ShootBullet(transform.position, direction, enemyShootDataObject.ShootSpeed);
+        }
+        else
+        {
+            bullet.ShootBullet(transform.position, enemyShootDataObject.ShootDirection,enemyShootDataObject.ShootSpeed);
+        }
+
+
 
     }
 }

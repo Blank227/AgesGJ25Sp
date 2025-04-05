@@ -38,14 +38,18 @@ public class PlayerControls : MonoBehaviour
         if (!stopAction.IsPressed()) 
         {
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
-            float length = MathF.Sqrt(moveValue.x * moveValue.x + moveValue.y * moveValue.y);
-            direction = new Vector2(moveValue.x / length, moveValue.y / length);
-            Vector2 oldPosition = gameObject.transform.position;
-            gameObject.transform.Translate(MovementSpeed * Time.deltaTime * direction);
-            if (gameObject.transform.position.x < Camera.transform.position.x - widthThreshold ||
-                gameObject.transform.position.x > Camera.transform.position.x + widthThreshold ||
-                gameObject.transform.position.y < Camera.transform.position.y - heightThreshold ||
-                gameObject.transform.position.y > Camera.transform.position.y + heightThreshold) gameObject.transform.position = oldPosition;
+            if (moveValue != Vector2.zero) 
+            {
+                float length = MathF.Sqrt(moveValue.x * moveValue.x + moveValue.y * moveValue.y);
+                direction = new Vector2(moveValue.x / length, moveValue.y / length);
+                Vector2 oldPosition = gameObject.transform.position;
+                gameObject.transform.Translate(MovementSpeed * Time.deltaTime * direction);
+                if (gameObject.transform.position.x < Camera.transform.position.x - widthThreshold ||
+                    gameObject.transform.position.x > Camera.transform.position.x + widthThreshold ||
+                    gameObject.transform.position.y < Camera.transform.position.y - heightThreshold ||
+                    gameObject.transform.position.y > Camera.transform.position.y + heightThreshold) gameObject.transform.position = oldPosition;
+            }
+        
         }       
 
         if (!CanShoot)

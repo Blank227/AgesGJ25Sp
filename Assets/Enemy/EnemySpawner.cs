@@ -34,15 +34,39 @@ public class EnemySpawner : MonoBehaviour
     EnemyGroupHandler _enemyGroupHandler;
 
     [SerializeField]
-    List<EnemySpawnConditions> EnemySpawnConditions = new List<EnemySpawnConditions>();
+    List<EnemySpawnConditions> EnemySpawnConditionsLeft = new List<EnemySpawnConditions>();
+
+    [SerializeField]
+    List<EnemySpawnConditions> EnemySpawnConditionsRight = new List<EnemySpawnConditions>();
+
+
+    [SerializeField]
+    float SpawnMinTime;
+
+    [SerializeField]
+    float SpawnMaxTime;
+
+    float spawnTimerLeft;
+
+    float spawnTimerRight;
+
+
+    GameObject _leftPlayer;
+
+    GameObject _rightPlayer;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SpawnEnemy(EnemySpawnConditions.First());
+        spawnTimerLeft = Random.Range(SpawnMinTime, SpawnMaxTime);
+        spawnTimerRight = Random.Range(SpawnMinTime, SpawnMaxTime);
+        _leftPlayer = GameObject.FindWithTag("LeftPlayer");
+        _rightPlayer = GameObject.FindWithTag("RightPlayer");
     }
 
-    public void SpawnEnemy(EnemySpawnConditions spawnConditions)
+    public void SpawnEnemy(EnemySpawnConditions spawnConditions, GameObject playerObject)
     {
         EnemyGroupData enemyGroupData = new EnemyGroupData();
         enemyGroupData.GroupId = _enemyGroupId;
@@ -51,9 +75,10 @@ public class EnemySpawner : MonoBehaviour
         float startOffsset = 0f;
         for (int i = 0; i < spawnConditions.SpawnAmount; i++)
         {
-            GameObject enemyobject = Instantiate(spawnConditions.EnemyPrefab);
+            GameObject enemyobject = Instantiate(spawnConditions.EnemyPrefab, gameObject.transform);
             var enemyShoot = enemyobject.GetComponent<EnemyShoot>();
             enemyShoot.SetGroupShootTimers(spawnConditions.groupShootTimer);
+            enemyShoot.SetPlayerObject(playerObject);
             var enemyMove = enemyobject.GetComponent<EnemyMove>();
             enemyMove.setPath(path, startOffsset);
 
@@ -79,6 +104,43 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        spawnTimerLeft -= Time.deltaTime;
+
+        if (spawnTimerLeft <= 0) 
+        {
+            int randomIndex = Random.Range(0, EnemySpawnConditionsLeft.Count);
+
+
+            var spawnCondition = EnemySpawnConditionsLeft[randomIndex];
+
+
+            SpawnEnemy(spawnCondition,_leftPlayer);
+
+
+
+            spawnTimerLeft = Random.Range(SpawnMinTime, SpawnMaxTime);
+     
+
+
+
+        }
+
+        spawnTimerRight -= Time.deltaTime;
+
+
+
+
+        if (spawnTimerRight <= 0)
+        {
+            int randomIndex = Random.Range(0, EnemySpawnConditionsRight.Count);
+
+
+            var spawnCondition = EnemySpawnConditionsRight[randomIndex];
+
+
+            SpawnEnemy(spawnCondition, _rightPlayer);
+
+            spawnTimerRight = Random.Range(SpawnMinTime, SpawnMaxTime);
+        }
     }
 }

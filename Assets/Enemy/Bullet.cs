@@ -12,12 +12,28 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     LayerMask _layerMask;
 
+
+    [SerializeField]
+    float SleepTimeout = 30f;
+    float _sleepTimer = 0f;
+
+    private void OnEnable()
+    {
+        _sleepTimer = SleepTimeout;
+    }
+
+    private void Start()
+    {
+        _sleepTimer = SleepTimeout;
+    }
+
     public void ShootBullet(Vector2 startPosition, Vector2 direction, float speed)
     {
         _speed = speed;
         transform.position = startPosition;
         _direction = direction;
     }
+
 
 
 
@@ -36,7 +52,18 @@ public class Bullet : MonoBehaviour
                 hurtInterFace.Damage(1);
                 
             }
+            _sleepTimer = SleepTimeout;
             this.gameObject.SetActive(false);
         }
+
+            _sleepTimer -= Time.fixedDeltaTime;
+        if (_sleepTimer < 0f)
+        {
+          
+            this.gameObject.SetActive(false);
+        }
+
+
+
     }
 }
