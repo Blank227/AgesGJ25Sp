@@ -4,6 +4,9 @@ public class EnemyPathNode : MonoBehaviour
 {
 
     [SerializeField]
+    public float NodeSpeed = 5f;
+
+    [SerializeField]
     SpriteRenderer spriteRenderer;
 
     [SerializeField]

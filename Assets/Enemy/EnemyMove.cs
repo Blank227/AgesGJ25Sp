@@ -64,13 +64,13 @@ public class EnemyMove : MonoBehaviour
             _currentNodeIndex = 0;
             _goalNodeIndex = 1;
             startTimer = startDelay;
-            enemyShoot.ResetShootTimers();
         }
      
 
        
 
         transform.position = _path[_currentNodeIndex].gameObject.transform.position;
+        _moveSpeed = _path[_currentNodeIndex].NodeSpeed;
         _currentNodePosition = _path[_currentNodeIndex].gameObject.transform.position;
         _goalNodePosition = _path[_goalNodeIndex].gameObject.transform.position;
         _distanceBetweenCurrentAndGoalNodeSqr = (_currentNodePosition - _goalNodePosition).sqrMagnitude;

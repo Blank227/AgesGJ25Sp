@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 241165447}
     m_Modifications:
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.73
@@ -443,10 +447,10 @@ MonoBehaviour:
   EnemySpawnConditions:
   - EnemyPrefab: {fileID: 1872971024289838732, guid: 60477054180ddda4aaed3c16be7725dc, type: 3}
     EnemyPathParent: {fileID: 241165447}
-    SpawnAmount: 1
+    SpawnAmount: 2
     MoveDelay: 0.1
     groupShootTimer:
-    - TimeToShoot: 2
+    - TimeToShoot: 1
       enemyShootDataObject: {fileID: 11400000, guid: 8a86185edd7f85f4592edf2e72a2ecfa, type: 2}
 --- !u!4 &606990924
 Transform:
@@ -476,6 +480,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 241165447}
     m_Modifications:
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.84
