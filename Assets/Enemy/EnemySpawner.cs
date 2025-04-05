@@ -27,8 +27,11 @@ public class EnemySpawnConditions
 
 public class EnemySpawner : MonoBehaviour
 {
-    int enemyGroupId = 0;
-    int enemyId = 0;
+    int _enemyGroupId = 0;
+    int _enemyId = 0;
+
+    [SerializeField]
+    EnemyGroupHandler _enemyGroupHandler;
 
     [SerializeField]
     List<EnemySpawnConditions> EnemySpawnConditions = new List<EnemySpawnConditions>();
@@ -41,9 +44,10 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy(EnemySpawnConditions spawnConditions)
     {
-
+        EnemyGroupData enemyGroupData = new EnemyGroupData();
+        enemyGroupData.GroupId = _enemyGroupId;
         var path = spawnConditions.EnemyPathParent.GetComponentsInChildren<EnemyPathNode>().ToList();
-
+        
         float startOffsset = 0f;
         for (int i = 0; i < spawnConditions.SpawnAmount; i++)
         {
@@ -53,9 +57,22 @@ public class EnemySpawner : MonoBehaviour
             var enemyMove = enemyobject.GetComponent<EnemyMove>();
             enemyMove.setPath(path, startOffsset);
 
+            var enemyInformation = enemyobject.GetComponent<EnemyInformationScript>();
+            enemyInformation.EnemyGroupId = _enemyGroupId;
+            enemyInformation.EnemyId = _enemyId;
+            enemyInformation.ReachedTheEnd = true;
+            startOffsset += spawnConditions.MoveDelay;
 
-            startOffsset += spawnConditions.MoveDelay; 
+
+            enemyGroupData.Enemies.Add(enemyInformation);
+
+
+
+            _enemyId++;
         }
+        _enemyGroupId++;
+        _enemyGroupHandler.AddGroup(enemyGroupData);
+        
     }
 
 

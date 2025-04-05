@@ -9,7 +9,7 @@ public class EnemyShoot : MonoBehaviour
     BulletPool EnemyBulletPool;
 
     [SerializeField]
-    IList<GroupShootTimer> groupShootTimers = new List<GroupShootTimer>();
+    IList<GroupShootTimer> _groupShootTimers = new List<GroupShootTimer>();
 
 
     float groupShootTimer = 0;
@@ -17,11 +17,11 @@ public class EnemyShoot : MonoBehaviour
 
     public void SetGroupShootTimers(List<GroupShootTimer> shootTimers)
     {
-        groupShootTimers = shootTimers;
+        _groupShootTimers = shootTimers;
 
         currentGorupShootIndex = 0;
-        var currentShootInformation = groupShootTimers[currentGorupShootIndex];
-        groupShootTimer = groupShootTimers[currentGorupShootIndex].TimeToShoot;
+        var currentShootInformation = _groupShootTimers[currentGorupShootIndex];
+        groupShootTimer = _groupShootTimers[currentGorupShootIndex].TimeToShoot;
 
     }
 
@@ -33,7 +33,7 @@ public class EnemyShoot : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameObject enemyBulletPoolGameObject = GameObject.FindWithTag("EnemyBulletPool");
+        GameObject enemyBulletPoolGameObject = GameObject.FindWithTag("EnemyHandlers");
         EnemyBulletPool = enemyBulletPoolGameObject.GetComponent<BulletPool>();
 
     }
@@ -41,16 +41,18 @@ public class EnemyShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            groupShootTimer -= Time.deltaTime;
-        if (groupShootTimers.Any() && currentGorupShootIndex < groupShootTimers.Count)
+        if (_groupShootTimers.Any() && currentGorupShootIndex < _groupShootTimers.Count)
         {
+            groupShootTimer -= Time.deltaTime;
             if (groupShootTimer <= 0)
             {
-                var currentShootInformation = groupShootTimers[currentGorupShootIndex];
+                var currentShootInformation = _groupShootTimers[currentGorupShootIndex];
                 Shoot(currentShootInformation.enemyShootDataObject);
                 currentGorupShootIndex++;
-                currentGorupShootIndex = currentGorupShootIndex < groupShootTimers.Count ? currentGorupShootIndex : 0;
-                groupShootTimer = groupShootTimers[currentGorupShootIndex].TimeToShoot;
+                if (currentGorupShootIndex > _groupShootTimers.Count)
+                {
+                    groupShootTimer = _groupShootTimers[currentGorupShootIndex].TimeToShoot;
+                }
                 
             }
 
@@ -62,8 +64,12 @@ public class EnemyShoot : MonoBehaviour
 
     public void ResetShootTimers()
     {
-      
 
+        if (!_groupShootTimers.Any())
+            return;
+
+        currentGorupShootIndex = 0;
+        var currentShootInformation = _groupShootTimers[currentGorupShootIndex];
     }
 
 

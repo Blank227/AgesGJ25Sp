@@ -4,6 +4,8 @@ public class EnemyInformationScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+    public bool ReachedTheEnd = false;
+
     public bool First {get;set;} = false;
     public bool Dead { get; set; } = false;
 

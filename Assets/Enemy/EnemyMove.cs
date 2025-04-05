@@ -20,6 +20,8 @@ public class EnemyMove : MonoBehaviour
 
     bool _wait = true;
 
+    bool _canStart = false;
+
     Vector2 _currentNodePosition;
 
     Vector2 _goalNodePosition;
@@ -27,7 +29,10 @@ public class EnemyMove : MonoBehaviour
 
     float _distanceBetweenCurrentAndGoalNodeSqr = 0;
 
+    [SerializeField]
+    EnemyInformationScript _enemyInformation;
 
+    EnemyCanStartHandler _canStartHandler;
 
 
 
@@ -39,6 +44,12 @@ public class EnemyMove : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameObject enemyBulletPoolGameObject = GameObject.FindWithTag("EnemyHandlers");
+
+        _canStartHandler = enemyBulletPoolGameObject.GetComponent<EnemyCanStartHandler>();
+
+
+
     }
 
 
@@ -48,6 +59,7 @@ public class EnemyMove : MonoBehaviour
         MoveToNextPoint();
         startDelay = moveDelay;
         startTimer = startDelay;
+        print(startDelay);
       
       
 
@@ -64,6 +76,7 @@ public class EnemyMove : MonoBehaviour
             _currentNodeIndex = 0;
             _goalNodeIndex = 1;
             startTimer = startDelay;
+            enemyShoot.ResetShootTimers();
         }
      
 
@@ -98,16 +111,27 @@ public class EnemyMove : MonoBehaviour
     {
         if (_wait)
         {
-            if (_goalNodeIndex < _path.Count && startTimer >= 0)
+            if (!_canStart)
             {
+                _canStart = _canStartHandler.CanStart(_enemyInformation.EnemyGroupId);
+            }
+
+
+            if (_goalNodeIndex < _path.Count && startTimer >= 0 && _canStartHandler != null && _canStart)
+            {
+               
                 startTimer -= Time.deltaTime;
-                if (startTimer <= 0) 
+
+
+
+                if (startTimer < 0)
                 {
                     _wait = false;
 
-                    
 
                 }
+                
+
             }
         }
     }
@@ -128,12 +152,18 @@ public class EnemyMove : MonoBehaviour
         {
             transform.position = _goalNodePosition;
             MoveToNextPoint();
+            print(_currentNodeIndex);
+            _enemyInformation.ReachedTheEnd = _currentNodeIndex == 1? true : false;
+            _canStart = !_enemyInformation.ReachedTheEnd;
+
+
         }
         else 
         {
             transform.position = newDesiredPosition;
         }
 
+      
 
 
 
