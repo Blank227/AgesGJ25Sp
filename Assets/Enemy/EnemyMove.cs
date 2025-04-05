@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
+
     [SerializeField]
-    List<Transform> _path;
-    int goalNodeIndex = 1;
-    int currentNodeIndex = 0;
+    EnemyShoot enemyShoot;
+
+    [SerializeField]
+    List<EnemyPathNode> _path;
+    int _goalNodeIndex = 1;
+    int _currentNodeIndex = 0;
     [SerializeField]
     float startDelay;
     float startTimer;
@@ -35,15 +39,14 @@ public class EnemyMove : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        setPath(_path);
     }
 
 
-    void setPath(List<Transform> newPath)
+    public  void setPath(List<EnemyPathNode> newPath, float moveDelay)
     {
         _path = newPath;
         MoveToNextPoint();
-  
+        startDelay = moveDelay;
         startTimer = startDelay;
       
       
@@ -54,25 +57,38 @@ public class EnemyMove : MonoBehaviour
     public void MoveToNextPoint()
     {
        
-        if (goalNodeIndex >= _path.Count)
+        if (_goalNodeIndex >= _path.Count)
         {
             //set start position as first node in path and rest
             _wait = true;
-            currentNodeIndex = 0;
-            goalNodeIndex = 1;
+            _currentNodeIndex = 0;
+            _goalNodeIndex = 1;
             startTimer = startDelay;
+            enemyShoot.ResetShootTimers();
         }
      
 
-        transform.position = _path[currentNodeIndex].position;
-        _currentNodePosition = _path[currentNodeIndex].position;
-        _goalNodePosition = _path[goalNodeIndex].position;
+       
+
+        transform.position = _path[_currentNodeIndex].gameObject.transform.position;
+        _currentNodePosition = _path[_currentNodeIndex].gameObject.transform.position;
+        _goalNodePosition = _path[_goalNodeIndex].gameObject.transform.position;
         _distanceBetweenCurrentAndGoalNodeSqr = (_currentNodePosition - _goalNodePosition).sqrMagnitude;
         direction = (_goalNodePosition - _currentNodePosition).normalized;
+        _currentNodeIndex = _goalNodeIndex;
+        _goalNodeIndex++;
 
 
-        currentNodeIndex = goalNodeIndex;
-        goalNodeIndex++;
+        if (_currentNodeIndex < _path.Count)
+        {
+            var currentNode = _path[_currentNodeIndex];
+            if (currentNode.EnemyShootDataObject != null)
+            {
+                enemyShoot.Shoot(currentNode.EnemyShootDataObject);
+            }
+        }
+
+      
 
 
     }
@@ -82,7 +98,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (_wait)
         {
-            if (goalNodeIndex < _path.Count && startTimer > 0)
+            if (_goalNodeIndex < _path.Count && startTimer >= 0)
             {
                 startTimer -= Time.deltaTime;
                 if (startTimer <= 0) 
