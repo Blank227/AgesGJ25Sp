@@ -18,6 +18,8 @@ public class EnemyShoot : MonoBehaviour
 
     public void SetGroupShootTimers(List<GroupShootTimer> shootTimers)
     {
+        if (shootTimers != null)
+            return;
         _groupShootTimers = shootTimers;
 
         currentGorupShootIndex = 0;

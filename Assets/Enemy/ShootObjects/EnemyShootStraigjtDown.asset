@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8867a350629e842bcf10fb38977e41, type: 3}
   m_Name: EnemyShootStraigjtDown
   m_EditorClassIdentifier: 
-  ShootTypeEnum: 0
+  ShootType: 0
   ShootDirection: {x: 0, y: -1}
-  ShootSpeed: 10
+  ShootSpeed: 5
