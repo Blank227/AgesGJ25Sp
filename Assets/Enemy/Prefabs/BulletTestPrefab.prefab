@@ -141,4 +141,4 @@ MonoBehaviour:
   _circleCollider: {fileID: 912078208481045570}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
