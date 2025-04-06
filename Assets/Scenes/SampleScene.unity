@@ -1115,7 +1115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -131}
+  m_AnchoredPosition: {x: 0, y: -63}
   m_SizeDelta: {x: 606.7539, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1788230156
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SUPER BUTTERFLY EFFECT
+  m_text: "SUPER \nBUTTERFLY EFFECT"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ebab59e4cdea501468c1d5571b7a47ea, type: 2}
   m_sharedMaterial: {fileID: 34219256054952096, guid: ebab59e4cdea501468c1d5571b7a47ea, type: 2}
@@ -1165,8 +1165,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 92.9
-  m_fontSizeBase: 92.9
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
