@@ -11,6 +11,7 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField]
     IList<GroupShootTimer> _groupShootTimers = new List<GroupShootTimer>();
 
+    public AudioSource enemyAttackAudio;
 
     float groupShootTimer = 0;
     int currentGorupShootIndex = 0;
@@ -92,6 +93,8 @@ public class EnemyShoot : MonoBehaviour
         var bulletObject = EnemyBulletPool.GetNextBullet();
 
         var bullet = bulletObject.GetComponent<Bullet>();
+
+        enemyAttackAudio.Play();
 
         if (enemyShootDataObject.ShootType == ShootTypeEnum.AimAtPlayer)
         {

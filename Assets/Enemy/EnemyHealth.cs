@@ -13,6 +13,8 @@ public class EnemyHealth : MonoBehaviour, IHurt
     [SerializeField]
     int _score;
 
+    [SerializeField]
+    GameObject ExplosionPrefab;
     EnemyGroupHandler _enemyGroupHandler;
     
     GameHandler _gameHandler;
@@ -26,7 +28,6 @@ public class EnemyHealth : MonoBehaviour, IHurt
 
     [SerializeField]
     EnemyInformationScript _enemyInformationScript;
-
 
     public void SetGameHandler(GameHandler gameHandler)
     {
@@ -59,8 +60,7 @@ public class EnemyHealth : MonoBehaviour, IHurt
 
         if (health < 0)
         {
-
-
+            Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
             _gameHandler.UpdateScore(_score);
             _enemyGroupHandler.RemoveEnemyFromGroup(_enemyInformationScript.EnemyGroupId, _enemyInformationScript.EnemyId);
             Destroy(gameObject);

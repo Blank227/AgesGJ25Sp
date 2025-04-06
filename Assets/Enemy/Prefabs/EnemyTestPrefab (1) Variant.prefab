@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6717879179128136320, guid: 60477054180ddda4aaed3c16be7725dc, type: 3}
       propertyPath: health
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6778268326591771449, guid: 60477054180ddda4aaed3c16be7725dc, type: 3}
       propertyPath: m_Sprite
