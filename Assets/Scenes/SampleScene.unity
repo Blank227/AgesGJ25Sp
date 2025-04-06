@@ -1058,7 +1058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -119}
+  m_AnchoredPosition: {x: 0, y: -131}
   m_SizeDelta: {x: 606.7539, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1788230156
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Super Butterfly Effect
+  m_text: SUPER BUTTERFLY EFFECT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ebab59e4cdea501468c1d5571b7a47ea, type: 2}
   m_sharedMaterial: {fileID: 34219256054952096, guid: ebab59e4cdea501468c1d5571b7a47ea, type: 2}
@@ -1090,8 +1090,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294942720
-  m_fontColor: {r: 0, g: 0.6255336, b: 1, a: 1}
+    rgba: 4292450814
+  m_fontColor: {r: 0.9946091, g: 0.59917825, b: 0.8526835, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1108,8 +1108,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 78.7
-  m_fontSizeBase: 78.7
+  m_fontSize: 92.9
+  m_fontSizeBase: 92.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
