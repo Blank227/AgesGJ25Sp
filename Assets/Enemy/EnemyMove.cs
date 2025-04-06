@@ -152,7 +152,6 @@ public class EnemyMove : MonoBehaviour
         {
             transform.position = _goalNodePosition;
             MoveToNextPoint();
-            print(_currentNodeIndex);
             _enemyInformation.ReachedTheEnd = _currentNodeIndex == 1? true : false;
             _canStart = !_enemyInformation.ReachedTheEnd;
 
