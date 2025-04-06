@@ -18,6 +18,11 @@ public class EnemyMove : MonoBehaviour
     [SerializeField]
     float _moveSpeed;
 
+    [SerializeField]
+    LayerMask _layerMask;
+    [SerializeField]
+    BoxCollider2D _boxCollider;
+
     bool _wait = true;
 
     bool _canStart = false;
@@ -160,6 +165,18 @@ public class EnemyMove : MonoBehaviour
         else 
         {
             transform.position = newDesiredPosition;
+        }
+
+
+        var hit = Physics2D.OverlapBox(transform.position,_boxCollider.size,0, _layerMask);
+        if (hit) 
+        {
+            var hurtInterface = hit.gameObject.GetComponent<IHurt>();
+
+            if (hurtInterface != null) 
+            {
+                hurtInterface.Damage(1);
+            }
         }
 
       

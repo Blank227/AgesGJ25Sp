@@ -108,6 +108,10 @@ MonoBehaviour:
   _path: []
   startDelay: 1
   _moveSpeed: 20
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _boxCollider: {fileID: 6196002288013472037}
   _enemyInformation: {fileID: 5969475330670806008}
 --- !u!114 &5969475330670806008
 MonoBehaviour:
