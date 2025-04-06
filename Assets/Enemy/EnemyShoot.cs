@@ -20,6 +20,9 @@ public class EnemyShoot : MonoBehaviour
     {
         if (shootTimers != null)
             return;
+
+        if (!shootTimers.Any())
+            return;
         _groupShootTimers = shootTimers;
 
         currentGorupShootIndex = 0;
@@ -82,6 +85,10 @@ public class EnemyShoot : MonoBehaviour
 
     public void Shoot(EnemyShootDataObject enemyShootDataObject)
     {
+
+        if (enemyShootDataObject == null ||EnemyBulletPool == null)
+            return;
+
         var bulletObject = EnemyBulletPool.GetNextBullet();
 
         var bullet = bulletObject.GetComponent<Bullet>();

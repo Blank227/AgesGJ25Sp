@@ -28,7 +28,7 @@ public class EnemyHealth : MonoBehaviour, IHurt
     EnemyInformationScript _enemyInformationScript;
 
 
-    public void setGameHandler(GameHandler gameHandler)
+    public void SetGameHandler(GameHandler gameHandler)
     {
         _gameHandler = gameHandler;
     }
@@ -55,6 +55,7 @@ public class EnemyHealth : MonoBehaviour, IHurt
     public void Damage(int damage)
     {
         health -= damage;
+        
 
         if (health < 0)
         {

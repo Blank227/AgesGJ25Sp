@@ -10,8 +10,6 @@ public class UiHandler : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI _timeText;
     [SerializeField]
-    TextMeshProUGUI _gameOverTxt;
-    [SerializeField]
     Image _gameOverImage;
 
     bool _gameOver = false;

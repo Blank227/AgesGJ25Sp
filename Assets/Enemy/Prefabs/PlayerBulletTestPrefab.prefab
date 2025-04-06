@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7493824888200814765}
   - component: {fileID: 912078208481045570}
   - component: {fileID: 5463046240193480643}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: PlayerBulletTestPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,3 +142,4 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
+  SleepTimeout: 30

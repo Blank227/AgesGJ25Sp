@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
+
 [System.Serializable]
 public class GroupShootTimer
 {
@@ -72,39 +73,53 @@ public class EnemySpawner : MonoBehaviour
         EnemyGroupData enemyGroupData = new EnemyGroupData();
         enemyGroupData.GroupId = _enemyGroupId;
         var path = spawnConditions.EnemyPathParent.GetComponentsInChildren<EnemyPathNode>().ToList();
-        
-        float startOffsset = 0f;
-        for (int i = 0; i < spawnConditions.SpawnAmount; i++)
+
+        try
         {
-            GameObject enemyobject = Instantiate(spawnConditions.EnemyPrefab, gameObject.transform);
-            var enemyShoot = enemyobject.GetComponent<EnemyShoot>();
-            if (enemyShoot != null)
+
+            float startOffsset = 0f;
+            for (int i = 0; i < spawnConditions.SpawnAmount; i++)
             {
+                GameObject enemyobject = Instantiate(spawnConditions.EnemyPrefab, gameObject.transform);
+                var enemyShoot = enemyobject.GetComponent<EnemyShoot>();
+                if (spawnConditions.groupShootTimer != null)
+                {
+                    enemyShoot.SetGroupShootTimers(spawnConditions.groupShootTimer);
+                }
+               
+                
+                enemyShoot.SetPlayerObject(playerObject);
+                var enemyMove = enemyobject.GetComponent<EnemyMove>();
+                enemyMove.setPath(path, startOffsset);
 
-            enemyShoot.SetGroupShootTimers(spawnConditions.groupShootTimer);
+                var enemyInformation = enemyobject.GetComponent<EnemyInformationScript>();
+                enemyInformation.EnemyGroupId = _enemyGroupId;
+                enemyInformation.EnemyId = _enemyId;
+                enemyInformation.ReachedTheEnd = true;
+                startOffsset += spawnConditions.MoveDelay;
+
+                var enemyHealth = enemyobject.GetComponent<EnemyHealth>();
+
+                enemyHealth.SetGameHandler(_gameHandler);
+
+
+                enemyGroupData.Enemies.Add(enemyInformation);
+
+
+
+                _enemyId++;
             }
-            enemyShoot.SetPlayerObject(playerObject);
-            var enemyMove = enemyobject.GetComponent<EnemyMove>();
-            enemyMove.setPath(path, startOffsset);
-
-            var enemyInformation = enemyobject.GetComponent<EnemyInformationScript>();
-            enemyInformation.EnemyGroupId = _enemyGroupId;
-            enemyInformation.EnemyId = _enemyId;
-            enemyInformation.ReachedTheEnd = true;
-            startOffsset += spawnConditions.MoveDelay;
-
-            var enemyHealth = enemyobject.GetComponent<EnemyHealth>();
-            enemyHealth.setGameHandler(_gameHandler);
-
-
-            enemyGroupData.Enemies.Add(enemyInformation);
-
-
-
-            _enemyId++;
+            _enemyGroupId++;
+            _enemyGroupHandler.AddGroup(enemyGroupData);
         }
-        _enemyGroupId++;
-        _enemyGroupHandler.AddGroup(enemyGroupData);
+        catch (System.Exception ex)
+        {
+            print(ex.ToString());
+        }
+
+
+
+       
         
     }
 
