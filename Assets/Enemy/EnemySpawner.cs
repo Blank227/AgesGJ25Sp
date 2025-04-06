@@ -38,7 +38,8 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField]
     List<EnemySpawnConditions> EnemySpawnConditionsRight = new List<EnemySpawnConditions>();
-
+    [SerializeField]
+    GameHandler _gameHandler;
 
     [SerializeField]
     float SpawnMinTime;
@@ -92,6 +93,9 @@ public class EnemySpawner : MonoBehaviour
             enemyInformation.ReachedTheEnd = true;
             startOffsset += spawnConditions.MoveDelay;
 
+            var enemyHealth = enemyobject.GetComponent<EnemyHealth>();
+            enemyHealth.setGameHandler(_gameHandler);
+
 
             enemyGroupData.Enemies.Add(enemyInformation);
 
@@ -108,6 +112,11 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_gameHandler.GameOver)
+        {
+            return;
+        }
+
         spawnTimerLeft -= Time.deltaTime;
 
         if (spawnTimerLeft <= 0) 

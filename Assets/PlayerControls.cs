@@ -4,8 +4,21 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerControls : MonoBehaviour, IHurt
 {
+
+    GameHandler _gameHandler;
+
+
+    [SerializeField]
+    float InvincibleTime;
+    float _invincibleTimer = 0f;
+    [SerializeField]
+    float DamageRemoveTime;
+
+
+
+
     InputAction moveAction;
     InputAction shootAction;
     InputAction stopAction;
@@ -30,11 +43,23 @@ public class PlayerControls : MonoBehaviour
         stopAction = InputSystem.actions.FindAction(StopActionName);
         var bulletPoolObject = GameObject.FindWithTag("PlayerBulletPool");
         bulletPool = bulletPoolObject.GetComponent<BulletPool>();
+
+        GameObject gameHandlerObject = GameObject.FindWithTag("GameHandler");
+        _gameHandler = gameHandlerObject.GetComponent<GameHandler>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_gameHandler.GameOver)
+        {
+            return;
+        }
+
+
+        _invincibleTimer -= Time.deltaTime;
+
         if (!stopAction.IsPressed()) 
         {
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
@@ -77,5 +102,17 @@ public class PlayerControls : MonoBehaviour
         var bulletObject = bulletPool.GetNextBullet();
         var bullet = bulletObject.GetComponent<Bullet>();
         bullet.ShootBullet(transform.position, transform.up,10f);
+    }
+
+    public void Damage(int damage)
+    {
+
+        print("_invincibleTimer");
+        if (_invincibleTimer <= 0)
+        { 
+        
+            _invincibleTimer = InvincibleTime;
+            _gameHandler.RemoveGameTime(DamageRemoveTime);
+        }
     }
 }

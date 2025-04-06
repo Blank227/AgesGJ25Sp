@@ -9,6 +9,7 @@ TagManager:
   - PlayerBulletPool
   - LeftPlayer
   - RightPlayer
+  - GameHandler
   layers:
   - Default
   - TransparentFX

@@ -148,6 +148,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IFramesSeconds: 0
   health: 3
+  _score: 100
+  enemyMove: {fileID: 6995028850545744136}
+  enemyShoot: {fileID: 2131782480658664317}
   _enemyInformationScript: {fileID: 5969475330670806008}
 --- !u!61 &6196002288013472037
 BoxCollider2D:
