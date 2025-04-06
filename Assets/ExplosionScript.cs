@@ -6,7 +6,6 @@ public class ExplosionScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        print("test");
         GetComponent<AudioSource>().Play();
         Destroy(gameObject, lifetime);
     }

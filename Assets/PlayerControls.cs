@@ -35,6 +35,7 @@ public class PlayerControls : MonoBehaviour, IHurt
     public float heightThreshold;
     BulletPool bulletPool;
 
+    public AudioSource playerShootAudio;
 
     void Start()
     {
@@ -92,6 +93,9 @@ public class PlayerControls : MonoBehaviour, IHurt
         {
             FireBullet(transform.position + new Vector3((float)0.2, 0, 0), Vector2.up * 10);
             FireBullet(transform.position - new Vector3((float)0.2, 0, 0), Vector2.up * 10);
+
+            playerShootAudio.Play();
+
             CanShoot = false;
             ShotCooldown = 1;
         }
@@ -102,6 +106,7 @@ public class PlayerControls : MonoBehaviour, IHurt
         var bulletObject = bulletPool.GetNextBullet();
         var bullet = bulletObject.GetComponent<Bullet>();
         bullet.ShootBullet(transform.position, transform.up,10f);
+
     }
 
     public void Damage(int damage)
