@@ -629,8 +629,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 407}
-  m_SizeDelta: {x: 400, y: 400}
+  m_AnchoredPosition: {x: 0, y: 776}
+  m_SizeDelta: {x: 800, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172520708
 MonoBehaviour:
@@ -1680,8 +1680,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1748,7 +1748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: -0.000030517578}
+  m_AnchoredPosition: {x: -46, y: -33}
   m_SizeDelta: {x: 498, y: 74}
   m_Pivot: {x: 1, y: 1}
 --- !u!1001 &516591095
@@ -2490,7 +2490,6 @@ GameObject:
   - component: {fileID: 868702057}
   - component: {fileID: 868702056}
   - component: {fileID: 868702055}
-  - component: {fileID: 868702054}
   m_Layer: 5
   m_Name: UI (1)
   m_TagString: Untagged
@@ -2498,18 +2497,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &868702054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868702053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 726fed8de96bb5942b331fc69b12d430, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &868702055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5242,6 +5229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameTimeLengthSeconds: 180
   _uiHandler: {fileID: 1678816065}
+  LoadSceneIndex: 
 --- !u!114 &1678816065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5258,7 +5246,7 @@ MonoBehaviour:
   _timeText: {fileID: 1905646053}
   _gameOverImage: {fileID: 172520708}
   GameOverLerpTime: 3
-  gameOverSinusMaxHeight: 3
+  gameOverSinusMaxHeight: 100
   gameOverSinusSpeed: 3
 --- !u!4 &1678816066
 Transform:
@@ -6420,8 +6408,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6488,7 +6476,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -94, y: 0.3500061}
+  m_AnchoredPosition: {x: -46, y: -31}
   m_SizeDelta: {x: 393, y: 74}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1907673032

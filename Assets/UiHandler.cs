@@ -35,7 +35,7 @@ public class UiHandler : MonoBehaviour
 
     public void UpdateScoreText(int score)
     {
-        _scoreText.text = $"Score:{score}";
+        _scoreText.text = $"{score}";
     }
 
 

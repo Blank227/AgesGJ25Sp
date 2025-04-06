@@ -18,7 +18,7 @@ public class GameHandler : MonoBehaviour
     UiHandler _uiHandler;
 
     [SerializeField]
-    int LoadSceneIndex = 0;
+    string LoadSceneIndex = "SampleScene";
 
 
     public void UpdateScore(int score)
@@ -64,7 +64,7 @@ public class GameHandler : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene(LoadSceneIndex);
+                SceneManager.LoadScene(0);
             }
             return;
         }

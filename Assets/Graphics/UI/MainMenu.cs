@@ -3,11 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string LoadLevel = "NameHere";
+    string LoadLevel = "BjornTestSceneClone";
     
     public void PlayGame()
     {
-        SceneManager.LoadScene(LoadLevel);
+        print(SceneManager.sceneCountInBuildSettings);
+        var scene = SceneManager.sceneCountInBuildSettings;
+        SceneManager.LoadScene(1);
     }
     
     public void QuitGame()
