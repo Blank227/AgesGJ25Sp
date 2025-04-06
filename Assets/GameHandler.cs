@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class GameHandler : MonoBehaviour
     [SerializeField]
     UiHandler _uiHandler;
 
+    [SerializeField]
+    int LoadSceneIndex = 0;
+
 
     public void UpdateScore(int score)
     {
@@ -23,6 +27,8 @@ public class GameHandler : MonoBehaviour
         _uiHandler.UpdateScoreText(_score);
     }
 
+
+    
 
 
 
@@ -56,7 +62,10 @@ public class GameHandler : MonoBehaviour
 
         if (GameOver)
         {
-         
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene(LoadSceneIndex);
+            }
             return;
         }
 

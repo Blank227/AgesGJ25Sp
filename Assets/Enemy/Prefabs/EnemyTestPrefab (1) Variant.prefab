@@ -80,6 +80,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1159096134, guid: ec71ba73a77e6dc4e8cbe63105a718df, type: 3}
+    - target: {fileID: 6995028850545744136, guid: 60477054180ddda4aaed3c16be7725dc, type: 3}
+      propertyPath: _boxCollider
+      value: 
+      objectReference: {fileID: 279044120780083032}
+    - target: {fileID: 6995028850545744136, guid: 60477054180ddda4aaed3c16be7725dc, type: 3}
+      propertyPath: _layerMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -88,6 +96,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5564220149600910769}
   m_SourcePrefab: {fileID: 100100000, guid: 60477054180ddda4aaed3c16be7725dc, type: 3}
+--- !u!61 &279044120780083032 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6196002288013472037, guid: 60477054180ddda4aaed3c16be7725dc, type: 3}
+  m_PrefabInstance: {fileID: 6207018458871168637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5755005899536845041 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1872971024289838732, guid: 60477054180ddda4aaed3c16be7725dc, type: 3}
