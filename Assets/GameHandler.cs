@@ -56,6 +56,7 @@ public class GameHandler : MonoBehaviour
 
         if (GameOver)
         {
+         
             return;
         }
 
@@ -68,6 +69,7 @@ public class GameHandler : MonoBehaviour
         if (_gameTimeLengthSeconds < 0)
         {
             GameOver = true;
+            _uiHandler.StartGameOver();
             //GameOver Here
         }
 
