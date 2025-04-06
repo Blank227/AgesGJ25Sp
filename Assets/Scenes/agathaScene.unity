@@ -197,6 +197,10 @@ PrefabInstance:
       propertyPath: NodeSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: EnemyShootDataObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 08406e32fc277ef47bae8701feb667f3, type: 2}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.18
@@ -316,7 +320,7 @@ PrefabInstance:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
-      objectReference: {fileID: 11400000, guid: 08406e32fc277ef47bae8701feb667f3, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.66
@@ -1115,6 +1119,10 @@ PrefabInstance:
       propertyPath: NodeSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: EnemyShootDataObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 08406e32fc277ef47bae8701feb667f3, type: 2}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.06
@@ -1540,7 +1548,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: NodeSpeed
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1604,6 +1612,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1706297348}
     m_Modifications:
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
@@ -1918,6 +1930,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1706297348}
     m_Modifications:
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
@@ -2299,7 +2315,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: NodeSpeed
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2358,6 +2374,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1706297348}
     m_Modifications:
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
@@ -2424,6 +2444,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 892188740}
     m_Modifications:
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: EnemyShootDataObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 08406e32fc277ef47bae8701feb667f3, type: 2}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.72
@@ -2618,6 +2646,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1706297348}
     m_Modifications:
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
@@ -3044,7 +3076,7 @@ PrefabInstance:
     - target: {fileID: 1315295992723908554, guid: 9d6b53445a721724d85ae5c2e8d2fad1, type: 3}
       propertyPath: EnemySpawnConditionsLeft.Array.data[2].EnemyPrefab
       value: 
-      objectReference: {fileID: 1872971024289838732, guid: 60477054180ddda4aaed3c16be7725dc, type: 3}
+      objectReference: {fileID: 5755005899536845041, guid: 87699844b6082ae4988ec0c1862e24aa, type: 3}
     - target: {fileID: 1315295992723908554, guid: 9d6b53445a721724d85ae5c2e8d2fad1, type: 3}
       propertyPath: EnemySpawnConditionsLeft.Array.data[2].SpawnAmount
       value: 4
@@ -3087,7 +3119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1315295992723908554, guid: 9d6b53445a721724d85ae5c2e8d2fad1, type: 3}
       propertyPath: EnemySpawnConditionsLeft.Array.data[0].groupShootTimer.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2611368176835694814, guid: 9d6b53445a721724d85ae5c2e8d2fad1, type: 3}
       propertyPath: m_Name
@@ -3217,6 +3249,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1706297348}
     m_Modifications:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
       objectReference: {fileID: 0}
@@ -3289,7 +3325,7 @@ PrefabInstance:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
-      objectReference: {fileID: 11400000, guid: 8a86185edd7f85f4592edf2e72a2ecfa, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.16
@@ -3348,9 +3384,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 892188740}
     m_Modifications:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
-      objectReference: {fileID: 11400000, guid: 8a86185edd7f85f4592edf2e72a2ecfa, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.3545556
@@ -3415,7 +3455,7 @@ PrefabInstance:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
-      objectReference: {fileID: 11400000, guid: 8a86185edd7f85f4592edf2e72a2ecfa, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.4
@@ -3669,9 +3709,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 892188740}
     m_Modifications:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
-      objectReference: {fileID: 11400000, guid: 8a86185edd7f85f4592edf2e72a2ecfa, type: 2}
+      objectReference: {fileID: 11400000, guid: 08406e32fc277ef47bae8701feb667f3, type: 2}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.97
@@ -3736,7 +3780,7 @@ PrefabInstance:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
-      objectReference: {fileID: 11400000, guid: 8a86185edd7f85f4592edf2e72a2ecfa, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.93
@@ -3856,6 +3900,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 892188740}
     m_Modifications:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
       objectReference: {fileID: 11400000, guid: 08406e32fc277ef47bae8701feb667f3, type: 2}
@@ -3967,6 +4015,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1706297348}
     m_Modifications:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
       objectReference: {fileID: 11400000, guid: 08406e32fc277ef47bae8701feb667f3, type: 2}
@@ -4028,9 +4080,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 892188740}
     m_Modifications:
     - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
+      propertyPath: NodeSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 243322472619466557, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: EnemyShootDataObject
       value: 
-      objectReference: {fileID: 11400000, guid: 08406e32fc277ef47bae8701feb667f3, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2073594535012026582, guid: bef997b466c49154d9a5e828d08ead04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.3545556
