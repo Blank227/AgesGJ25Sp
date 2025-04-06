@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShootType: 1
   ShootDirection: {x: 0, y: 0}
-  ShootSpeed: 10
+  ShootSpeed: 7

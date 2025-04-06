@@ -43,7 +43,7 @@ public class EnemyHealth : MonoBehaviour, IHurt
 
     private void Update()
     {
-        if (_gameHandler.GameOver)
+        if (_gameHandler != null && _gameHandler.GameOver)
         {
             enemyMove.enabled = false;
             enemyShoot.enabled = false;
