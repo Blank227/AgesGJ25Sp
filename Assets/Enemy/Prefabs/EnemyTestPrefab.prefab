@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IFramesSeconds: 0
-  health: 3
+  health: 5
   _score: 100
   enemyMove: {fileID: 6995028850545744136}
   enemyShoot: {fileID: 2131782480658664317}
