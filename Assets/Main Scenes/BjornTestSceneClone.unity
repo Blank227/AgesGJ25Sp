@@ -2808,6 +2808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Music
       objectReference: {fileID: 0}
+    - target: {fileID: 8104509720828754575, guid: 3532357623534ac4193a315c3e378fc7, type: 3}
+      propertyPath: musicTimer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
